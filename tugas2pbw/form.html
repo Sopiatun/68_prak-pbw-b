@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .info {
+            font-size: 18px;
+            color: #333;
+        }
+        .info span {
+            font-weight: bold;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Input Data</h1>
+        <p class="info">Silakan masukkan nama dan NIM Anda melalui prompt di bawah.</p>
+        <button onclick="getUserData()">Input Data</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function getUserData() {
+            const name = prompt("Masukkan Nama Anda:");
+            const nim = prompt("Masukkan NIM Anda:");
+            
+            if (name && nim) {
+                document.getElementById('output').innerHTML = 
+                "<p>Nama: <span>" + name + "</span></p>" +
+                "<p>NIM: <span>" + nim + "</span></p>";
+            } else {
+                alert("Nama dan NIM harus diisi!");
+            }
+        }
+    </script>
+</body>
+</html>
